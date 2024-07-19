@@ -1,4 +1,6 @@
-package com.aloha.server.service;
+package com.starcloud.soloproject.service;
+
+
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -12,9 +14,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.WebAuthenticationDetails;
 import org.springframework.stereotype.Service;
 
-import com.aloha.server.dto.UserAuth;
-import com.aloha.server.dto.Users;
-import com.aloha.server.mapper.UserMapper;
+import com.starcloud.soloproject.dto.UserAuth;
+import com.starcloud.soloproject.dto.Users;
+import com.starcloud.soloproject.mapper.UserMapper;
 
 import lombok.extern.slf4j.Slf4j;
 

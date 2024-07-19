@@ -1,4 +1,4 @@
-package com.aloha.server.security.constants;
+package com.starcloud.soloproject.security.constants;
 
 public final class SecurityConstants {
 

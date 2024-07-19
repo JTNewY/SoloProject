@@ -1,4 +1,6 @@
-package com.aloha.server.config;
+package com.starcloud.soloproject.config;
+
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
@@ -14,21 +16,21 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import com.aloha.server.security.CustomUserDetailService;
-import com.aloha.server.security.filter.JwtAuthenticationFilter;
-import com.aloha.server.security.filter.JwtRequestFilter;
-import com.aloha.server.security.provider.JwtTokenProvider;
+import com.starcloud.soloproject.security.CustomUserDetailService;
+import com.starcloud.soloproject.security.filter.JwtAuthenticationFilter;
+import com.starcloud.soloproject.security.filter.JwtRequestFilter;
+import com.starcloud.soloproject.security.provider.JwtTokenProvider;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true) //어노테이션에 prePostEnabled = true를 추가하면 AuthenticationManager를 자동으로 구성합니다.
-public class SecurityConfig  {
+@EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
+public class SecurityConfig {
 
-	@Autowired
-	private CustomUserDetailService customUserDetailService;
+    @Autowired
+    private CustomUserDetailService customUserDetailService;
 
     @Autowired 
     private JwtTokenProvider jwtTokenProvider;
@@ -36,56 +38,53 @@ public class SecurityConfig  {
     private AuthenticationManager authenticationManager;
 
     @Bean
-	public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
         this.authenticationManager = authenticationConfiguration.getAuthenticationManager();
-		return authenticationManager;
-	}
+        return authenticationManager;
+    }
 
     @Bean
-	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         log.info("securityFilterChain...");
 
+        // CORS 설정
+        http.cors(cors -> cors.configurationSource(request -> {
+            var corsConfiguration = new org.springframework.web.cors.CorsConfiguration();
+            corsConfiguration.setAllowedOrigins(List.of("http://localhost:3003")); // 클라이언트 URL
+            corsConfiguration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS")); // 허용할 메소드
+            corsConfiguration.setAllowedHeaders(List.of("*")); // 모든 헤더 허용
+            return corsConfiguration;
+        }));
+
+        // CSRF 비활성화
+        http.csrf(csrf -> csrf.disable());
+
         // 폼 기반 로그인 비활성화
-        http.formLogin( login -> login.disable() );
+        http.formLogin(login -> login.disable());
 
         // HTTP 기본 인증 비활성화
-        http.httpBasic( basic -> basic.disable() );
+        http.httpBasic(basic -> basic.disable());
 
-        // CSRF(Cross-Site Request Forgery) 공격 방어 기능 비활성화
-        http.csrf( csrf -> csrf.disable() );
-
-        // 필터 설정
-        // ✅ JWT 요청 필터 1️⃣
-        // ✅ JWT 인증 필터 2️⃣
+        // JWT 필터 설정
         http.addFilterAt(new JwtAuthenticationFilter(authenticationManager, jwtTokenProvider), UsernamePasswordAuthenticationFilter.class)
-            .addFilterBefore(new JwtRequestFilter(authenticationManager, jwtTokenProvider), UsernamePasswordAuthenticationFilter.class)
-            ;
+            .addFilterBefore(new JwtRequestFilter(authenticationManager, jwtTokenProvider), UsernamePasswordAuthenticationFilter.class);
 
         // 인가 설정
         http.authorizeHttpRequests()
-                .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-                .antMatchers("/").permitAll()
-                .antMatchers("/login").permitAll()
-                .antMatchers("/user/**").hasAnyRole("USER" , "ADMIN")
-                .antMatchers("/admin/**").hasRole("ADMIN")
-                // .anyRequest().authenticated()
-                ;
-						
+            .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
+            .antMatchers("/").permitAll()
+            .antMatchers("/login").permitAll()
+            .antMatchers("/user/**").hasAnyRole("USER", "ADMIN")
+            .antMatchers("/admin/**").hasRole("ADMIN");
+
         // 사용자 정보를 불러오는 서비스 설정
         http.userDetailsService(customUserDetailService);
 
-		return http.build();
-	}
-
+        return http.build();
+    }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
-
-	
-
-	
-
 }

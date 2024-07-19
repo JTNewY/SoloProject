@@ -1,4 +1,4 @@
-package com.aloha.server.controller;
+package com.starcloud.soloproject.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.aloha.server.dto.CustomUser;
-import com.aloha.server.dto.Users;
-import com.aloha.server.service.UserService;
+import com.starcloud.soloproject.dto.CustomUser;
+import com.starcloud.soloproject.dto.Users;
+import com.starcloud.soloproject.service.UserService;
 
 import lombok.extern.slf4j.Slf4j;
 

@@ -1,4 +1,4 @@
-package com.aloha.server.security.filter;
+package com.starcloud.soloproject.security.filter;
 
 import java.io.IOException;
 import java.util.List;
@@ -16,9 +16,9 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import com.aloha.server.dto.CustomUser;
-import com.aloha.server.security.constants.SecurityConstants;
-import com.aloha.server.security.provider.JwtTokenProvider;
+import com.starcloud.soloproject.dto.CustomUser;
+import com.starcloud.soloproject.security.constants.SecurityConstants;
+import com.starcloud.soloproject.security.provider.JwtTokenProvider;
 
 import lombok.extern.slf4j.Slf4j;
 

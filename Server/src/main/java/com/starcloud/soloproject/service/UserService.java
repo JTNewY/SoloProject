@@ -1,8 +1,8 @@
 package com.starcloud.soloproject.service;
 
-import com.starcloud.soloproject.dto.Users;
+import javax.servlet.http.HttpServletRequest;
 
-import jakarta.servlet.http.HttpServletRequest;
+import com.starcloud.soloproject.dto.Users;
 
 
 public interface UserService {

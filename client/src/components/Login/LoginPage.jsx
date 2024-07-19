@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import '../../css/styles.css'; // Make sure to include your styles
+import { LoginContext } from '../../contexts/LoginContextProvider'; // LoginContextProvider가 있는 경로에 맞게 수정하세요
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  
+  const { login } = useContext(LoginContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle the login logic here
-    console.log('Username:', username);
-    console.log('Password:', password);
+    login(username, password); // login 함수 호출
   };
 
   return (

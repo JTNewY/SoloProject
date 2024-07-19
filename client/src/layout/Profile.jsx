@@ -45,7 +45,7 @@ const Profile = () => {
             <div className="profile-card">
               <div className="profile-card-header">
                 <img
-                  src="./img/profile.webp"
+                  src="./img/profile.jpg"
                   alt="프로필"
                   className="profile-img"
                 />

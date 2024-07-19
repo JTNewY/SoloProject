@@ -1,4 +1,4 @@
-package com.aloha.server.dto;
+package com.starcloud.soloproject.dto;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -8,12 +8,14 @@ import Footer from './layout/Footer';
 import PostPages from './pages/PostPages';
 import Login from './components/Login/LoginPage';
 import Home from './pages/Home';
+import LoginContextProvider from './contexts/LoginContextProvider'
 
 const App = () => {
   return (
     <BrowserRouter>
       <Header />
       <Navigation />
+      <LoginContextProvider>
       <div className="content">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -23,7 +25,7 @@ const App = () => {
         </Routes>
       </div>
       <Footer />
-     
+      </LoginContextProvider>
     </BrowserRouter>
   );
 }

@@ -1,4 +1,5 @@
-package com.aloha.server.security.provider;
+package com.starcloud.soloproject.security.provider;
+
 
 import java.util.Date;
 import java.util.List;
@@ -12,12 +13,12 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
-import com.aloha.server.dto.CustomUser;
-import com.aloha.server.dto.UserAuth;
-import com.aloha.server.dto.Users;
-import com.aloha.server.mapper.UserMapper;
-import com.aloha.server.prop.JwtProps;
-import com.aloha.server.security.constants.SecurityConstants;
+import com.starcloud.soloproject.dto.CustomUser;
+import com.starcloud.soloproject.dto.UserAuth;
+import com.starcloud.soloproject.dto.Users;
+import com.starcloud.soloproject.mapper.UserMapper;
+import com.starcloud.soloproject.prop.JwtProps;
+import com.starcloud.soloproject.security.constants.SecurityConstants;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;

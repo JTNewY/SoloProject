@@ -1,9 +1,10 @@
-package com.aloha.server.mapper;
+package com.starcloud.soloproject.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.aloha.server.dto.UserAuth;
-import com.aloha.server.dto.Users;
+import com.starcloud.soloproject.dto.UserAuth;
+import com.starcloud.soloproject.dto.Users;
+
 
 @Mapper
 public interface UserMapper {

@@ -1,4 +1,4 @@
-package com.aloha.server.security;
+package com.starcloud.soloproject.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -6,9 +6,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.aloha.server.dto.CustomUser;
-import com.aloha.server.dto.Users;
-import com.aloha.server.mapper.UserMapper;
+import com.starcloud.soloproject.dto.CustomUser;
+import com.starcloud.soloproject.dto.Users;
+import com.starcloud.soloproject.mapper.UserMapper;
 
 import lombok.extern.slf4j.Slf4j;
 
