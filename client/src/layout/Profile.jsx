@@ -53,7 +53,7 @@ const Profile = () => {
               <div className="profile-card-body">
                 <p className="profile-description">
                 <h2>JTNewY</h2>
-              개발자를 꿈꾸고있는 JTNewY 라고 합니다.
+              개발자를 꿈꾸고있는 JTnewY 라고 합니다.
               <br />환영합니다.
             <hr></hr>
                 <h5>SKill</h5>

@@ -7,6 +7,7 @@ import Header from './layout/Header';
 import Footer from './layout/Footer';
 import MainContent from './pages/MainContent';
 import Profile from './layout/Profile';
+import Post from './pages/Post';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
       <div className="content">
         <Routes>
           <Route path="/" element={<MainContent />} />
+          <Route path="/post" element={<Post />} />
           {/* 다른 경로와 컴포넌트들을 추가하세요 */}
         </Routes>
       </div>
