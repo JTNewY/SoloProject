@@ -6,11 +6,13 @@ import Navigation from './layout/Navigation';
 import Header from './layout/Header';
 import Footer from './layout/Footer';
 import MainContent from './pages/MainContent';
+import Profile from './layout/Profile';
 
 const App = () => {
   return (
     <BrowserRouter>
       <Header />
+      <Profile />
       <Navigation />
       <div className="content">
         <Routes>
@@ -18,6 +20,7 @@ const App = () => {
           {/* 다른 경로와 컴포넌트들을 추가하세요 */}
         </Routes>
       </div>
+      
       <Footer />
     </BrowserRouter>
   );
