@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.starcloud.soloproject.dto.Board;
 import com.starcloud.soloproject.dto.Files;
+import com.starcloud.soloproject.service.BoardService;
+import com.starcloud.soloproject.service.FileService;
 
 import lombok.extern.slf4j.Slf4j;
 
