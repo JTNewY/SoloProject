@@ -22,12 +22,12 @@ const MainContent = () => (
       <div className="col-md-10 col-lg-8 col-xl-7">
         {/* 포스트 미리보기 */}
         <PostPreview
-          title="첫 게시글2"
+          title="첫 게시글1"
           subtitle="Problems look mighty small from 150 miles up"
           date="September 24, 2023"
         />
           <PostPreview
-          title="첫 게시글1"
+          title="첫 게시글2"
           subtitle="Problems look mighty small from 150 miles up"
           date="September 24, 2023"
         />
