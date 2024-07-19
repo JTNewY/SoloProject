@@ -1,13 +1,11 @@
 import React from 'react'
-import Header from '../components/Header/Header'
-import LoginForm from '../components/Login/LoginForm'
+import LoginPage from '../components/Login/LoginPage'
 
 const Login = () => {
   return (
     <>
-      <Header />
       <div className="container">
-        <LoginForm />
+        <LoginPage />
       </div>
     </>
   )

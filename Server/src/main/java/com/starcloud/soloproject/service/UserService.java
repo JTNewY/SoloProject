@@ -1,8 +1,9 @@
-package com.aloha.server.service;
+package com.starcloud.soloproject.service;
 
-import javax.servlet.http.HttpServletRequest;
+import com.starcloud.soloproject.dto.Users;
 
-import com.aloha.server.dto.Users;
+import jakarta.servlet.http.HttpServletRequest;
+
 
 public interface UserService {
 

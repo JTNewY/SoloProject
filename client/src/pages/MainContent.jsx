@@ -21,6 +21,7 @@ const MainContent = () => (
     <div className="row gx-4 gx-lg-5 justify-content-center "style={{ padding: '30px' }}>
       <div className="col-md-10 col-lg-8 col-xl-7">
         {/* 포스트 미리보기 */}
+        
         <PostPreview
           title="첫 게시글1"
           subtitle="Problems look mighty small from 150 miles up"
