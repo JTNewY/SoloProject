@@ -25,7 +25,7 @@ const Footer = () => (
               </a>
             </li>
             <li className="list-inline-item">
-              <a href="#!">
+              <a href="https://github.com/JTNewY">
                 <span className="fa-stack fa-lg">
                   <i className="fas fa-circle fa-stack-2x"></i>
                   <i className="fab fa-github fa-stack-1x fa-inverse"></i>

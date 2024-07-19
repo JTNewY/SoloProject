@@ -9,7 +9,7 @@ const PostPreview = ({ title, subtitle, date }) => (
     </Link>
     <p className="post-meta">
       Posted by
-      <a href="#!">Start Bootstrap</a> {/* 작성자 링크는 그대로 두었습니다. */}
+      <a href="#!">별구름</a> {/* 작성자 링크는 그대로 두었습니다. */}
       on {date}
     </p>
     <hr className="my-4" />

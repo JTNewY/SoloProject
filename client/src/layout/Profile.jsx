@@ -51,10 +51,15 @@ const Profile = () => {
                 />
               </div>
               <div className="profile-card-body">
-                <h2 className="profile-name">태진</h2>
                 <p className="profile-description">
-                  열정적인 개발자로서 코드와 기술에 대한 사랑이 가득합니다. 
-                  새로운 도구와 기법을 탐색하며 혁신적인 솔루션을 구축하기 위해 항상 노력합니다.
+                <h2>JTNewY</h2>
+              개발자를 꿈꾸고있는 JTNewY 라고 합니다.
+              <br />환영합니다.
+            <hr></hr>
+                <h5>SKill</h5>
+                - <b>FrontEnd</b> : html,CSS,JavaScript,React,Flutter<br/>
+                - <b>BackEnd</b> : JAVA,JSP,Spring,SpringBoot<br/>&nbsp;Node.js,MySQL,Oracle 
+                
                 </p>
               </div>
             </div>
