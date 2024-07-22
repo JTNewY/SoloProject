@@ -68,9 +68,9 @@ const Profile = () => {
           <div className="col-md-6">
             <div className="blog-section">
         
-              <div className="category-section">
+              {/* <div className="category-section">
                 <BlogCategory categories={categories} />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

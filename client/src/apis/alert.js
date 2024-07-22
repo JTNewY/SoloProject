@@ -1,31 +1,31 @@
 import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
+/**
+ * icon : success, error, warning, info, question
+ */
+const MySwal = withReactContent(Swal)
 
-// 기본 알림 메서드
+// 기본 alert ⚠ 
 export const alert = (title, text, icon, callback) => {
-  Swal.fire({
-    title,
-    text,
-    icon,
-    confirmButtonText: '확인',
-  }).then(result => {
-    if (result.isConfirmed) {
-      if (callback) callback();
-    }
-  });
-};
+    MySwal.fire({
+        title: title,
+        text: text,
+        icon: icon
+    })
+    .then(callback)  // 경고창 출력 이후 실행할 콜백 함수
+}
 
-// 확인 대화 상자 메서드
+// confirm 
 export const confirm = (title, text, icon, callback) => {
-  Swal.fire({
-    title,
-    text,
-    icon,
-    showCancelButton: true,
-    confirmButtonText: '확인',
-    cancelButtonText: '취소',
-  }).then(result => {
-    if (result.isConfirmed) {
-      if (callback) callback(result);
-    }
-  });
-};
+    MySwal.fire({
+        title: title,
+        text: text,
+        icon: icon,
+        showCancelButton: true,
+        cancelButtonColor: "#d33",
+        cancelButtonText: "No",
+        confirmButtonColor: "#3085d6",
+        confirmButtonText: "Yes",
+    })
+    .then( callback )
+}

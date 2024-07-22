@@ -8,23 +8,23 @@ import Footer from './layout/Footer';
 import PostPages from './pages/PostPages';
 import Login from './components/Login/LoginPage';
 import Home from './pages/Home';
-import LoginContextProvider from './contexts/LoginContextProvider'
+import LoginContextProvider from './contexts/LoginContextProvider';
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Header />
-      <Navigation />
       <LoginContextProvider>
-      <div className="content">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/post" element={<PostPages />} />
-          {/* 다른 경로와 컴포넌트들을 추가하세요 */}
-        </Routes>
-      </div>
-      <Footer />
+        <Header />
+        <Navigation />
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/post" element={<PostPages />} />
+            {/* 다른 경로와 컴포넌트들을 추가하세요 */}
+          </Routes>
+        </div>
+        <Footer />
       </LoginContextProvider>
     </BrowserRouter>
   );
