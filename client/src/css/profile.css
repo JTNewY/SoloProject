@@ -166,3 +166,159 @@
     font-size: 0.9rem; /* 모바일 화면에서는 작은 폰트 사이즈 */
   }
 }
+
+/* 기존 스타일에 추가 */
+.add-category {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.add-category input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  flex: 1;
+}
+
+.add-category button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.add-category button:hover {
+  background-color: #0056b3;
+}
+
+.delete-category-button {
+  margin-left: 10px;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+  background-color: #dc3545;
+  color: #fff;
+  cursor: pointer;
+}
+
+.delete-category-button:hover {
+  background-color: #c82333;
+}
+.no-category-message {
+  font-size: 0.9rem; /* 작은 폰트 사이즈 */
+  color: #999; /* 회색 텍스트 색상 */
+  text-align: center; /* 가운데 정렬 */
+  margin-top: 20px; /* 위쪽 여백 */
+}
+
+/* profile.css 파일에 추가 */
+.blog-category {
+  position: relative;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.refresh-button {
+  width: 30px; /* 버튼의 폭 */
+  height: 30px; /* 버튼의 높이 */
+  padding: 0;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.refresh-button i {
+  font-size: 14px; /* 아이콘의 크기 */
+}
+
+.refresh-button:hover {
+  background-color: #0056b3;
+}
+/* profile.css 파일에 추가 */
+.blog-category {
+  position: relative;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.edit-button {
+  width: 30px; /* 버튼의 폭 */
+  height: 30px; /* 버튼의 높이 */
+  padding: 0;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.edit-button i {
+  font-size: 14px; /* 아이콘의 크기 */
+}
+
+.refresh-button {
+  width: 30px; /* 버튼의 폭 */
+  height: 30px; /* 버튼의 높이 */
+  padding: 0;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.refresh-button i {
+  font-size: 14px; /* 아이콘의 크기 */
+}
+
+.refresh-button:hover {
+  background-color: #0056b3;
+}
+
+.add-category {
+  margin-top: 10px;
+}
+
+.add-category input {
+  margin-right: 5px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.add-category button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-category button:hover {
+  background-color: #0056b3;
+}

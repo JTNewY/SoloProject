@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.starcloud.soloproject.mapper.CategoryMapper">
+
+    <!-- 카테고리 조회 -->
+    <select id="getAllCategories" resultType="com.starcloud.soloproject.dto.Category">
+        SELECT * FROM category;
+    </select>
+
+    <!-- 카테고리 추가 -->
+    <insert id="addCategory" parameterType="com.starcloud.soloproject.dto.Category">
+        INSERT INTO category (name, description)
+        VALUES (#{name}, #{description});
+    </insert>
+
+    <!-- 카테고리 삭제 -->
+    <delete id="deleteCategory" parameterType="int">
+        DELETE FROM category WHERE id = #{id};
+    </delete>
+
+</mapper>
