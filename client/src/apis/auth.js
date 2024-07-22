@@ -5,7 +5,7 @@ import axios from 'axios';
 export const login = (username, password) => api.post(`/login?username=${username}&password=${password}`)
 
 // 사용자 정보
-export const info = () => api.get(`/api/users/info`)
+export const info = () => api.get(`/users/info`)
 
 // 회원 가입 
 export const join = (data) => api.post(`/users`, data)

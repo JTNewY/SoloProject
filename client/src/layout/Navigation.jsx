@@ -31,9 +31,7 @@ const Navigation = () => {
             <li className="nav-item"><Link className="nav-link px-lg-3 py-3 py-lg-4" to="/about">About</Link></li>
             <li className="nav-item"><Link className="nav-link px-lg-3 py-3 py-lg-4" to="/post">Sample Post</Link></li>
             {isLogin ? (
-              <li className="nav-item">
-                 <li className="nav-item"><Link className="nav-link px-lg-3 py-3 py-lg-4" to="/logout">logout</Link></li>
-              </li>
+                 <li className="nav-item"><Link className="nav-link px-lg-3 py-3 py-lg-4" to="/logout">Logout</Link></li>
             ) : (
               <li className="nav-item"><Link className="nav-link px-lg-3 py-3 py-lg-4" to="/login">Login</Link></li>
             )}

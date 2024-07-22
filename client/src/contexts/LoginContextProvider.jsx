@@ -10,6 +10,7 @@ const LoginContextProvider = ({ children }) => {
   const [isLogin, setLogin] = useState(false);
   const [userInfo, setUserInfo] = useState(null);
   const [roles, setRoles] = useState({ isUser: false, isAdmin: false });
+  const [loading, setLoading] = useState(true); // 추가된 로딩 상태
   const navigate = useNavigate();
 
   // 로그인 상태 확인
@@ -20,6 +21,7 @@ const LoginContextProvider = ({ children }) => {
     if (!accessToken) {
       console.log(`쿠키에 accessToken(jwt)가 없음 (˘･_･˘)`);
       logoutSetting();
+      setLoading(false); // 로딩 완료
       return;
     }
 
@@ -33,6 +35,8 @@ const LoginContextProvider = ({ children }) => {
 
       if (data === 'UNAUTHORIZED' || response.status === 401) {
         console.log(`accessToken(jwt) 이 만료되었거나 인증에 실패하였습니다 (⊙_⊙;)`);
+        logoutSetting();
+        setLoading(false); // 로딩 완료
         return;
       }
 
@@ -41,6 +45,7 @@ const LoginContextProvider = ({ children }) => {
     } catch (error) {
       console.log(`error : ${error}`);
       logoutSetting();
+      setLoading(false); // 로딩 완료
     }
   };
 
@@ -61,7 +66,7 @@ const LoginContextProvider = ({ children }) => {
 
       if (status === 200) {
         localStorage.setItem('accessToken', accessToken);
-        loginCheck();
+        loginCheck(); // 로그인 상태 확인 함수 호출
 
         Swal.fire({
           title: '로그인 성공! 🎉',
@@ -92,7 +97,7 @@ const LoginContextProvider = ({ children }) => {
       if (authorization) {
         const accessToken = authorization.replace('Bearer ', '');
         localStorage.setItem('accessToken', accessToken);
-        loginCheck();
+        loginCheck(); // 로그인 상태 확인 함수 호출
         
         Swal.fire({
           title: '로그인 성공! 🎉',
@@ -101,6 +106,7 @@ const LoginContextProvider = ({ children }) => {
           confirmButtonText: '확인'
         }).then(() => {
           navigate('/');
+          setLogin(true);
         });
       } else {
         throw new Error('Authorization header missing');
@@ -127,7 +133,7 @@ const LoginContextProvider = ({ children }) => {
     console.log(`roleList : ${roleList}`);
 
     api.defaults.headers.common.Authorization = `Bearer ${accessToken}`;
-    setLogin(true);
+   // 로그인 상태를 true로 설정
 
     const updatedUserInfo = { no, userId, roleList };
     setUserInfo(updatedUserInfo);
@@ -138,15 +144,17 @@ const LoginContextProvider = ({ children }) => {
       if (role === 'ROLE_ADMIN') updatedRoles.isAdmin = true;
     });
     setRoles(updatedRoles);
+    setLoading(false); // 로딩 완료
   };
 
   // 로그아웃 처리
   const logoutSetting = () => {
     api.defaults.headers.common.Authorization = undefined;
     localStorage.removeItem('accessToken');
-    setLogin(false);
+    setLogin(false); // 로그인 상태를 false로 설정
     setUserInfo(null);
     setRoles({ isUser: false, isAdmin: false });
+    setLoading(false); // 로딩 완료
   };
 
   // 로그아웃
@@ -179,7 +187,7 @@ const LoginContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <LoginContext.Provider value={{ isLogin, login, logout, socialLogin }}>
+    <LoginContext.Provider value={{ isLogin, login, logout, socialLogin, loading }}>
       {children}
     </LoginContext.Provider>
   );
