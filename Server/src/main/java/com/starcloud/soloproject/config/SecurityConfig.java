@@ -50,8 +50,8 @@ public class SecurityConfig {
         // CORS 설정
         http.cors(cors -> cors.configurationSource(request -> {
             var corsConfiguration = new org.springframework.web.cors.CorsConfiguration();
-            corsConfiguration.setAllowedOrigins(List.of("http://localhost:3003")); // 클라이언트 URL
-            corsConfiguration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS")); // 허용할 메소드
+            corsConfiguration.setAllowedOrigins(List.of("*")); // 모든 출처 허용
+            corsConfiguration.setAllowedMethods(List.of("*")); // 모든 메소드 허용
             corsConfiguration.setAllowedHeaders(List.of("*")); // 모든 헤더 허용
             return corsConfiguration;
         }));
