@@ -10794,5 +10794,9 @@ header.masthead .post-heading .meta a {
 @media (min-width: 992px) {
   .post-preview > a > .post-title {
     font-size: 2.25rem;
+  
+  }
+  .swal2-popup {
+    font-family: 'D2Coding', sans-serif !important;
   }
 } 
