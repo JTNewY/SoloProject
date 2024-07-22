@@ -6,15 +6,14 @@ const Navigation = () => {
   const { isLogin, logout, loading } = useContext(LoginContext);
   const navigate = useNavigate();
 
-  // 로딩 중 표시
   if (loading) {
     return <div>Loading...</div>;
   }
 
   const handleLogout = (e) => {
-    e.preventDefault(); // 기본 링크 동작 방지
-    logout(); // 로그아웃 처리
-    navigate('/'); // 홈 페이지로 이동
+    e.preventDefault();
+    logout();
+    navigate('/');
   };
 
   return (
@@ -31,7 +30,7 @@ const Navigation = () => {
             <li className="nav-item"><Link className="nav-link px-lg-3 py-3 py-lg-4" to="/about">About</Link></li>
             <li className="nav-item"><Link className="nav-link px-lg-3 py-3 py-lg-4" to="/post">Sample Post</Link></li>
             {isLogin ? (
-                 <li className="nav-item"><Link className="nav-link px-lg-3 py-3 py-lg-4" to="/logout">Logout</Link></li>
+              <li className="nav-item"><Link className="nav-link px-lg-3 py-3 py-lg-4" to="/" onClick={handleLogout}>Logout</Link></li>
             ) : (
               <li className="nav-item"><Link className="nav-link px-lg-3 py-3 py-lg-4" to="/login">Login</Link></li>
             )}

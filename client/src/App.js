@@ -9,6 +9,7 @@ import PostPages from './pages/PostPages';
 import Login from './components/Login/LoginPage';
 import Home from './pages/Home';
 import LoginContextProvider from './contexts/LoginContextProvider';
+import AboutPages from './pages/AboutPages';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/about" element={<AboutPages />} />
             <Route path="/post" element={<PostPages />} />
             {/* 다른 경로와 컴포넌트들을 추가하세요 */}
           </Routes>

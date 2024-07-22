@@ -7,54 +7,35 @@ const Post = () => {
       <div className="container px-4 px-lg-5">
         <div className="row gx-4 gx-lg-5 justify-content-center">
           <div className="col-md-10 col-lg-8 col-xl-7">
+
+          <h2 className="section-heading">저를 소개합니다.</h2>
             <p>
-              Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory.
+              안녕하세요 웹개발자를 꿈꾸는 JTNEWY이라고 합니다.
+            </p>
+            
+            <p>
+                저는 웹개발에 대한 열정을 가지고 있으며, 새로운 기술을 배울때마다 흥미를 느끼고있습니다.
+                특히 백엔드를 개발할때 재미를 느끼고있습니다.
             </p>
             <p>
-              Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.
+                안되던것을 제가 직접 코드를 수정해서 해결하였을때의 뿌듯함은 말로 표현할 수 없습니다.
             </p>
             <p>
-              What was most significant about the lunar voyage was not that man set foot on the Moon but that they set eye on the earth.
+                애완견 프로젝트를 하였을 때, 팀원이 막혀서 쩔쩔매고 있었는데 제가 맡아서 코드를 수정하였습니다.
             </p>
             <p>
-              A Chinese tale tells of some men sent to harm a young girl who, upon seeing her beauty, become her protectors rather than her violators. That's how I felt seeing the Earth for the first time. I could not help but love and cherish her.
+                왜 안될까를 생각하면서 수업시간에 적었던 개념노트를 확인하면서 오류를 수정하였습니다.
+                팀원들도 좋아하는 모습을 보면서 엄청 뿌듯하였습니다.
             </p>
             <p>
-              For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.
+                이처럼 문제가 생긴다면 열심히 해결하고자 하겠습니다. 
             </p>
-            <h2 className="section-heading">The Final Frontier</h2>
+            <p> 그리고 더 나은 개발자가 되기위해 노력하겠습니다.</p>
             <p>
-              There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.
+            감사합니다.
+
             </p>
-            <p>
-              There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.
-            </p>
-            <blockquote className="blockquote">
-              The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.
-            </blockquote>
-            <p>
-              Spaceflights cannot be stopped. This is not the work of any one man or even a group of men. It is a historical process which mankind is carrying out in accordance with the natural laws of human development.
-            </p>
-            <h2 className="section-heading">Reaching for the Stars</h2>
-            <p>
-              As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.
-            </p>
-            <a href="#!">
-              <img className="img-fluid" src="assets/img/post-sample-image.jpg" alt="..." />
-            </a>
-            <span className="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
-            <p>
-              Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before.
-            </p>
-            <p>
-              As I stand out here in the wonders of the unknown at Hadley, I sort of realize there’s a fundamental truth to our nature, Man must explore, and this is exploration at its greatest.
-            </p>
-            <p>
-              Placeholder text by
-              <a href="http://spaceipsum.com/">Space Ipsum</a>
-              &middot; Images by
-              <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>
-            </p>
+
           </div>
         </div>
       </div>

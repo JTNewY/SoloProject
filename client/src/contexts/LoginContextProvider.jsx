@@ -76,6 +76,8 @@ const LoginContextProvider = ({ children }) => {
         }).then(() => {
           navigate('/');
         });
+
+        setLogin(true); // 로그인 상태를 true로 설정
       }
     } catch (error) {
       Swal.fire({
@@ -98,7 +100,7 @@ const LoginContextProvider = ({ children }) => {
         const accessToken = authorization.replace('Bearer ', '');
         localStorage.setItem('accessToken', accessToken);
         loginCheck(); // 로그인 상태 확인 함수 호출
-        
+
         Swal.fire({
           title: '로그인 성공! 🎉',
           text: '메인 화면으로 이동합니다 (●\'◡\'●)',
@@ -106,8 +108,9 @@ const LoginContextProvider = ({ children }) => {
           confirmButtonText: '확인'
         }).then(() => {
           navigate('/');
-          setLogin(true);
         });
+
+        setLogin(true); // 로그인 상태를 true로 설정
       } else {
         throw new Error('Authorization header missing');
       }
@@ -133,10 +136,7 @@ const LoginContextProvider = ({ children }) => {
     console.log(`roleList : ${roleList}`);
 
     api.defaults.headers.common.Authorization = `Bearer ${accessToken}`;
-   // 로그인 상태를 true로 설정
-
-    const updatedUserInfo = { no, userId, roleList };
-    setUserInfo(updatedUserInfo);
+    setUserInfo({ no, userId, roleList });
 
     const updatedRoles = { isUser: false, isAdmin: false };
     roleList.forEach(role => {
