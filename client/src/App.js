@@ -11,6 +11,11 @@ import Home from './pages/Home';
 import LoginContextProvider from './contexts/LoginContextProvider';
 import AboutPages from './pages/AboutPages';
 
+import List from './pages/board/List';
+import Insert from './pages/board/Insert';
+import Read from './pages/board/Read';
+import Update from './pages/board/Update';
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -23,6 +28,10 @@ const App = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/about" element={<AboutPages />} />
             <Route path="/post" element={<PostPages />} />
+            <Route path="/boards" element={ <List/> }></Route>
+            <Route path="/boards/insert" element={ <Insert/> }></Route>
+            <Route path="/boards/:no" element={ <Read/> }></Route>
+            <Route path="/boards/update/:no" element={ <Update/> }></Route>
             {/* 다른 경로와 컴포넌트들을 추가하세요 */}
           </Routes>
         </div>

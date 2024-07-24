@@ -17,5 +17,7 @@ public class Board {
     private Date updDate;
     private int views;
 
+    private int category;
+
     private List<MultipartFile> files;
 }

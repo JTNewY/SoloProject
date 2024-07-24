@@ -1,11 +1,13 @@
-CREATE TABLE board(
-  no        INT             NOT NULL AUTO_INCREMENT COMMENT '게시판 번호',
-  title     VARCHAR(100)    NOT NULL COMMENT '게시판 제목',
-  writer    VARCHAR(100)    NOT NULL  COMMENT '게시판 작성자',
-  content   TEXT            NULL COMMENT '게시판 내용',
-  reg_date  TIMESTAMP       NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '게시판 등록일자',
-  upd_date  TIMESTAMP       NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '게시판 수정일자',
-  PRIMARY KEY (no)
+CREATE TABLE board (
+  no         INT             NOT NULL AUTO_INCREMENT COMMENT '게시판 번호',
+  title      VARCHAR(100)    NOT NULL COMMENT '게시판 제목',
+  writer     VARCHAR(100)    NOT NULL COMMENT '게시판 작성자',
+  content    TEXT            NULL COMMENT '게시판 내용',
+  reg_date   TIMESTAMP       NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '게시판 등록일자',
+  upd_date   TIMESTAMP       NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '게시판 수정일자',
+  category_id INT            NOT NULL COMMENT '카테고리 ID',
+  PRIMARY KEY (no),
+  FOREIGN KEY (category_id) REFERENCES category(id)
 ) COMMENT '게시판';
 
 INSERT INTO board (title, writer, content)
